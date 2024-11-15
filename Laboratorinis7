@@ -6,17 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Naitas Lukšys"> <!-- Komentaras su asmens vardu -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
     <title>Pirmasis</title>
     <link rel="stylesheet" href="styles.css"> 
 <title>Pirmasis</title>
 </head>
 <body>
+    <div class "jumbotron jumbotron-fluid" id="jumbotron">
+        <img src="images/Pirma.png" id="jumbotron-image">
+        <div class="image-text">Photographer</div>
+    </div>
+    <div class="container container-fluid" id="About">
+        <div class="row">
+            <h2>About me</h2>
+            <p id="p1">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <div class="col-sm-3">
+                <img src="images/Aboutme.png">
+            </div>
+            <div class="col-sm-9">
+                <h3>Designer and web developer.</h3>
+                <div class="container mt-4">
+                    <div class="row">
+                      <!-- Pirmasis stulpelis -->
+                      <div class="col-sm-6">
+                        <ul>
+                            <li><b>Birthday:</b> 18 May 2000</li>
+                            <li><b>Phone:</b> +3706589218</li>
+                            <li><b>City:</b> Amsterdam, The Netherlands</li>
+                        </ul>
+                      </div>
+                      <!-- Antrasis stulpelis -->
+                      <div class="col-sm-6">
+                        <ul>
+                            <li><b>Age:</b> 25</li>
+                            <li><b>Degree:</b> Master</li>
+                            <li><b>Email:</b> henrikas25@gmail.com</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
 
-    <h1>Kažkas</h1>
-    <b>Paryskinta I guess</b><br>
-    <i>Pasvyres ane</i><br>
-    <u>Nu ir pabrauktas</u>
-    <p>My first paragraph.</p>
+    </div>
+    <div class="container container-fluid" id="Resume">
+        <h2>My Resume</h2>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Kairysis stulpelis -->
+                <div class="col-md-6">
+                    <h2>Summary</h2>
+                        <h3>Henrikas</h3>
+                        <ul>
+                            <li>Panevėžys</li>
+                            <li>+370621556</li>
+                            <li>henrikas25@gmail.com</li>
+                        </ul>
+                    <h2>Education</h2>
+                        <h5>Tokia anokia gimnacija</h5>
+                        <p>2015 - 2016</p>
+                        <h5>Toks kitoks universitetas</h5>
+                        <p>2015 - 2016</p>
+                </div>
+                <!-- Dešinysis stulpelis -->
+                <div class="col-md-6">
+                    <h2>Professional Experience</h2>
+                        <h5>Specialistas fotografijoje</h5>
+                        <p>2019 - Present</p>
+                        <p>Experion, New York, NY</p>
+                        <ul>
+                            <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                            <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project</li>
+                            <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                            <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    <div id="Portfolio">
+        <h2>Portfolio</h2>
+        <img id="portfolio1" src="images/portfolijo1.png">
+        <img id="portfolio2" src="images/portfolio2.jpg">
+    </div>
+    <div class="services" id="Services">
+        <h2>Services</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RVmG_d3HKBA?si=K6WpZghV8P5CGQEZ" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <video width="420" height="250" controls>
+            <source src="images/MIKA - Relax, Take It Easy - MIKAVEVO (480p, h264, youtube).mp4" type="video/mp4">
+        </video>
+        <audio controls>
+            <source src="images/MIKA - Relax, Take It Easy.mp3" type="audio/mpeg">
+        </audio>
 
+    </div>
 </body>
 </html>
