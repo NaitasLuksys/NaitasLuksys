@@ -14,6 +14,16 @@
 <title>Pirmasis</title>
 </head>
 <body>
+    <nav class="navbar">
+        <p id="vardas">Naitas</p>
+        <ul class="nav-list">
+            <li><a href="#jumbotron" class="nav-link active">Home</a></li>
+            <li><a href="#About" class="nav-link">About</a></li>
+            <li><a href="#Resume" class="nav-link">Resume</a></li>
+            <li><a href="#Services" class="nav-link">Services</a></li>
+            <li><a href="#Portfolio" class="nav-link">Portfolio</a></li>
+        </ul>
+    </nav>
     <div class "jumbotron jumbotron-fluid" id="jumbotron">
         <img src="images/Pirma.png" id="jumbotron-image">
         <div class="image-text">Photographer</div>
@@ -31,20 +41,23 @@
                     <div class="row">
                       <!-- Pirmasis stulpelis -->
                       <div class="col-sm-6">
-                        <ul>
-                            <li><b>Birthday:</b> 18 May 2000</li>
-                            <li><b>Phone:</b> +3706589218</li>
+                        <ul class="custom-list">
+                            <li><b>Birthday:</b> 18 May 2000</li><br>
+                            <li><b>Phone:</b> +3706589218</li><br>
                             <li><b>City:</b> Amsterdam, The Netherlands</li>
                         </ul>
                       </div>
                       <!-- Antrasis stulpelis -->
                       <div class="col-sm-6">
-                        <ul>
-                            <li><b>Age:</b> 25</li>
-                            <li><b>Degree:</b> Master</li>
+                        <ul class="custom-list">
+                            <li><b>Age:</b> 25</li><br>
+                            <li><b>Degree:</b> Master</li><br>
                             <li><b>Email:</b> henrikas25@gmail.com</li>
                         </ul>
                       </div>
+                    <p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. 
+                        Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. 
+                        Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.</p>
                     </div>
                   </div>
             </div>
@@ -104,5 +117,6 @@
         </audio>
 
     </div>
+    <script src="script.js"></script>    
 </body>
 </html>
