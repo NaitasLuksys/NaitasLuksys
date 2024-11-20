@@ -1,3 +1,28 @@
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-list {
+        flex-direction: row;
+    }
+    .nav-link {
+        padding: 5px;
+    }
+    .image-text {
+        font-size: 40px;
+    }
+}
+@media (max-width: 576px) {
+    #About img {
+        width: 100%;
+        height: auto;
+    }
+    #Portfolio img {
+        width: 100%;
+        height: auto;
+    }
+}
 #jumbotron {
     position: relative;
     width: 100%;
@@ -9,7 +34,6 @@
     color: #ffffff;
     
 }
-
 #jumbotron-image {
     display: block;
     top: 0;
@@ -19,7 +43,6 @@
     object-fit: cover;
     filter: brightness(60%);
 }
-
 .image-text {
     position: absolute;
     top: 50%;
@@ -35,26 +58,41 @@
     height: 400px;
     margin-left: -20px;
 }
-#About h2, #p1{
+#About h1, #p1{
     text-align: center;
 }
-#Resume h2{
+#Resume h1{
     text-align: center;
 }
 #Portfolio #portfolio1, #portfolio2{
     width: 300px;
     height: 250px;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h6 {
     font-family: 'Times New Roman', sans-serif;
     font-weight: bold;
     color: #2c3e50;
 }
+h5{
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: bold;
+    color: #4c5155;
+    font-size: 25px;
+}
+#About h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: #4c5155;
+}
+#Resume ul li{
+    color: #4c5155;
+}
+
 p {
     font-family: 'Georgia', serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #34495e; /* Pilkai mėlyna spalva */
+    color: #4c5155; /* Pilkai mėlyna spalva */
 }
 body {
     font-family: 'Verdana', sans-serif;
@@ -87,6 +125,7 @@ ul.custom-list li::before {
     transition: background-color 0.3s ease; /* Sklandus perėjimas */
     background-color: transparent; /* Pradinė būsena – be fono */
     box-shadow: none; /* Be šešėlio */
+    font-family: 'Times New Roman', sans-serif;
 }
 .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.5); /* Juodas permatomas fonas */
@@ -94,9 +133,10 @@ ul.custom-list li::before {
 }
 #vardas {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
     margin: 0; /* Pašalina nereikalingus tarpus */
+    font-family: 'Times New Roman', sans-serif;
 }
 /* Sąrašas su nuorodomis */
 .nav-list {
@@ -113,6 +153,7 @@ ul.custom-list li::before {
     color: white;
     font-size: 18px;
     padding: 10px 20px;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 /* Kai užvedame pelę */

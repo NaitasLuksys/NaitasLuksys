@@ -24,16 +24,16 @@
             <li><a href="#Portfolio" class="nav-link">Portfolio</a></li>
         </ul>
     </nav>
-    <div class "jumbotron jumbotron-fluid" id="jumbotron">
-        <img src="images/Pirma.png" id="jumbotron-image">
+    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+        <img src="images/Pirma.png" id="jumbotron-image" alt="Jumbotron Image">
         <div class="image-text">Photographer</div>
-    </div>
+    </div><br>
     <div class="container container-fluid" id="About">
         <div class="row">
-            <h2>About me</h2>
+            <h1>About me</h1>
             <p id="p1">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             <div class="col-sm-3">
-                <img src="images/Aboutme.png">
+                <img src="images/Aboutme.png" class="img-fluid" alt="About Me">
             </div>
             <div class="col-sm-9">
                 <h3>Designer and web developer.</h3>
@@ -63,16 +63,17 @@
             </div>
         </div>
     </div>
-
-    </div>
+    </div><br>
     <div class="container container-fluid" id="Resume">
-        <h2>My Resume</h2>
+        <h1>My Resume</h1>
         <div class="container mt-5">
             <div class="row">
                 <!-- Kairysis stulpelis -->
                 <div class="col-md-6">
                     <h2>Summary</h2>
-                        <h3>Henrikas</h3>
+                        <h5>Henrikas</h5><p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. 
+                            Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. 
+                            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.</p>
                         <ul>
                             <li>Panevėžys</li>
                             <li>+370621556</li>
@@ -80,9 +81,13 @@
                         </ul>
                     <h2>Education</h2>
                         <h5>Tokia anokia gimnacija</h5>
-                        <p>2015 - 2016</p>
+                        <p>2015 - 2016</p><br><p>Qui deserunt veniam. 
+                            Et sed aliquam labore tempore sed quisquam iusto autem sit. 
+                            Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
                         <h5>Toks kitoks universitetas</h5>
-                        <p>2015 - 2016</p>
+                        <p>2015 - 2016</p><br><p>Quia nobis sequi est occaecati aut. 
+                            Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae. 
+                            Consequatur neque etlon sader mart dila</p>
                 </div>
                 <!-- Dešinysis stulpelis -->
                 <div class="col-md-6">
@@ -98,14 +103,14 @@
                         </ul>
                 </div>
             </div>
-        </div>
-    <div id="Portfolio">
-        <h2>Portfolio</h2>
+        </div><br>
+    <div class="container text-center" id="Portfolio">
+        <h1>Portfolio</h1>
         <img id="portfolio1" src="images/portfolijo1.png">
         <img id="portfolio2" src="images/portfolio2.jpg">
-    </div>
-    <div class="services" id="Services">
-        <h2>Services</h2>
+    </div><br>
+    <div class="container text-center services" id="Services">
+        <h1>Services</h1>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/RVmG_d3HKBA?si=K6WpZghV8P5CGQEZ" 
         title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
