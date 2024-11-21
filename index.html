@@ -15,14 +15,28 @@
 </head>
 <body>
     <nav class="navbar">
-        <p id="vardas">Naitas</p>
-        <ul class="nav-list">
-            <li><a href="#jumbotron" class="nav-link active">Home</a></li>
-            <li><a href="#About" class="nav-link">About</a></li>
-            <li><a href="#Resume" class="nav-link">Resume</a></li>
-            <li><a href="#Services" class="nav-link">Services</a></li>
-            <li><a href="#Portfolio" class="nav-link">Portfolio</a></li>
-        </ul>
+        <div class="navbar-left">
+            <p id="vardas">Naitas</p>
+        </div>
+        <div class="navbar-center">
+            <ul class="nav-list">
+                <li><a href="#jumbotron" class="nav-link active">Home</a></li>
+                <li><a href="#About" class="nav-link">About</a></li>
+                <li><a href="#Resume" class="nav-link">Resume</a></li>
+                <li><a href="#Services" class="nav-link">Services</a></li>
+                <li><a href="#Portfolio" class="nav-link">Portfolio</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <button class="menu-icon" id="menu-toggle">☰</button>
+            <ul class="dropdown-menu">
+                <li><a href="#jumbotron" class="dropdown-link">Home</a></li>
+                <li><a href="#About" class="dropdown-link">About</a></li>
+                <li><a href="#Resume" class="dropdown-link">Resume</a></li>
+                <li><a href="#Services" class="dropdown-link">Services</a></li>
+                <li><a href="#Portfolio" class="dropdown-link">Portfolio</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="jumbotron jumbotron-fluid" id="jumbotron">
         <img src="images/Pirma.png" id="jumbotron-image" alt="Jumbotron Image">

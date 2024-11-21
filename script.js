@@ -23,3 +23,18 @@ window.addEventListener('scroll', function () {
         navbar.classList.remove('scrolled');
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    menuToggle.addEventListener('click', function () {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Paslėpti meniu, kai spustelėjama už jo ribų
+    document.addEventListener('click', function (event) {
+        if (!dropdownMenu.contains(event.target) && event.target !== menuToggle) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+

@@ -11,16 +11,37 @@
     }
     .image-text {
         font-size: 40px;
+        padding: 0 20px;
+    }
+    #jumbotron {
+        height: 80vh; /* Mažinama aukštis mažiems ekranams */
+    }
+    #jumbotron-image {
+        object-fit: contain; /* Prisitaiko */
     }
 }
 @media (max-width: 576px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between; /* Mygtukai kraštuose */
+    }
+
     #About img {
         width: 100%;
         height: auto;
     }
+
+    .container {
+        padding: 10px;
+    }
+
     #Portfolio img {
         width: 100%;
         height: auto;
+    }
+
+    .image-text {
+        font-size: 20px; /* Mažesnis tekstas mažiems ekranams */
     }
 }
 #jumbotron {
@@ -58,15 +79,22 @@
     height: 400px;
     margin-left: -20px;
 }
-#About h1, #p1{
+#About h1{
+    text-align: center;
+    text-shadow: 0px -10px 7px rgba(139,119,119,0.45);
+    font-size: 50px;
+}
+#p1{
     text-align: center;
 }
 #Resume h1{
     text-align: center;
+    text-shadow: 0px -10px 7px rgba(139,119,119,0.45);
+    font-size: 50px;
 }
 #Portfolio #portfolio1, #portfolio2{
-    width: 300px;
-    height: 250px;
+    width: 30%;
+    height: 20%;
 }
 h1, h2, h4, h6 {
     font-family: 'Times New Roman', sans-serif;
@@ -97,6 +125,8 @@ p {
 body {
     font-family: 'Verdana', sans-serif;
     background-color: #f8f9fa; /* Šviesi foninė spalva */
+    margin: 0;
+    padding: 0;
 }
 iframe, video {
     margin-top: 10px;
@@ -127,9 +157,8 @@ ul.custom-list li::before {
     box-shadow: none; /* Be šešėlio */
     font-family: 'Times New Roman', sans-serif;
 }
-.navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.5); /* Juodas permatomas fonas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Šiek tiek šešėlio */
+.navbar-left {
+    flex: 1; /* Palikti vietos vardui kairėje */
 }
 #vardas {
     font-weight: bold;
@@ -137,6 +166,24 @@ ul.custom-list li::before {
     color: white;
     margin: 0; /* Pašalina nereikalingus tarpus */
     font-family: 'Times New Roman', sans-serif;
+}
+.navbar-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.5); /* Juodas permatomas fonas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Šiek tiek šešėlio */
 }
 /* Sąrašas su nuorodomis */
 .nav-list {
@@ -146,6 +193,69 @@ ul.custom-list li::before {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+.navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Slėpti dideliuose ekranuose */
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 10px 0;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #1e1b1b;
+}
+
+/* Smulkiems ekranams */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row; /* Užtikrina horizontalų išdėstymą */
+        justify-content: space-between; /* Paskirsto elementus tarp kairės ir dešinės */
+        align-items: center; /* Centruoja elementus vertikaliai */
+        padding: 10px 20px; /* Papildomas tarpas */
+    }
+    .navbar-left {
+        flex: 1; /* Kairė pusė užima vietą automatiškai */
+        text-align: left; /* Kairiojo turinio išlyginimas */
+    }
+    .navbar-right {
+        flex: 0; /* Tik dropdown mygtukas dešinėje */
+    }
+    .menu-icon {
+        display: block; /* Rodo dropdown mygtuką mažiems ekranams */
+    }
+    .navbar-center {
+        display: none; /* Slepiame centrinę navigaciją mažiems ekranams */
+    }
 }
 /* Nuorodos stilius */
 .nav-link {
@@ -163,5 +273,4 @@ ul.custom-list li::before {
 /* Aktyvi nuoroda */
 .nav-link.active {
     color: #FF5733; /* Oranžinė spalva */
-    font-weight: bold; /* Paryškinimas */
-}
+    font-weight: bold; /* Paryškinimas */}
