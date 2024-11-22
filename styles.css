@@ -275,6 +275,17 @@ body.dark-mode {
     background-color: black;
     color: #fff; 
 }
+body.dark-mode .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+}
 body.dark-mode * {
     color: white !important;
 }
