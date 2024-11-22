@@ -26,15 +26,15 @@ window.addEventListener('scroll', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
+
     menuToggle.addEventListener('click', function () {
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Paslėpti meniu, kai spustelėjama už jo ribų
-    document.addEventListener('click', function (event) {
-        if (!dropdownMenu.contains(event.target) && event.target !== menuToggle) {
+    document.querySelectorAll('.dropdown-menu li a').forEach(item => {
+        item.addEventListener('click', () => {
             dropdownMenu.style.display = 'none';
-        }
+        });
     });
 });
 function myFunction() {
