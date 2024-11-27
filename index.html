@@ -10,10 +10,12 @@
     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
     crossorigin="anonymous">
     <title>Pirmasis</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Pirmasis</title>
 </head>
 <body>
+    <button onclick="topFunction()" id="up" title="Go to top">&#8593</button>
     <nav class="navbar">
         <div class="navbar-left">
             <p id="vardas">Naitas</p>
@@ -23,22 +25,30 @@
                 <li><a href="#jumbotron" class="nav-link active">Home</a></li>
                 <li><a href="#About" class="nav-link">About</a></li>
                 <li><a href="#Resume" class="nav-link">Resume</a></li>
-                <li><a href="#Services" class="nav-link">Services</a></li>
                 <li><a href="#Portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#Services" class="nav-link">Services</a></li>
             </ul>
         </div>
         <div class="navbar-right">
+            <button onclick="toggleTheme()" class="theme-toggle-btn">
+                <span class="sun">☀</span>
+                <span class="moon">🌙</span>
+            </button>
             <button class="menu-icon" id="menu-toggle">☰</button>
             <ul class="dropdown-menu">
                 <li><a href="#jumbotron" class="dropdown-link">Home</a></li>
                 <li><a href="#About" class="dropdown-link">About</a></li>
                 <li><a href="#Resume" class="dropdown-link">Resume</a></li>
-                <li><a href="#Services" class="dropdown-link">Services</a></li>
                 <li><a href="#Portfolio" class="dropdown-link">Portfolio</a></li>
+                <li><a href="#Services" class="dropdown-link">Services</a></li>
+                <li><button onclick="toggleTheme()" class="theme-toggle-btn">
+                    <span class="sun">☀</span>
+                    <span class="moon">🌙</span>
+                </button></li>
             </ul>
         </div>
     </nav>
-    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+    <div class="jumbotron jumbotron-fluid  scroll-animation" id="jumbotron">
         <img src="images/Pirma.png" id="jumbotron-image" alt="Jumbotron Image">
         <div class="image-text">Photographer</div>
     </div><br>
@@ -80,52 +90,159 @@
     </div><br>
     <div class="container container-fluid" id="Resume">
         <h1>My Resume</h1>
+        <p id="p1">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         <div class="container mt-5">
             <div class="row">
                 <!-- Kairysis stulpelis -->
-                <div class="col-md-6">
+                <div class="col-md-6" id="Resume">
                     <h2>Summary</h2>
-                    <h5>Henrikas</h5><p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. 
-                        Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. 
-                        Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.</p>
-                    <ul>
-                        <li>Panevėžys</li>
-                        <li>+370621556</li>
-                        <li>henrikas25@gmail.com</li>
-                    </ul>
+                    <div id="timeline">
+                        <div class="timeline-item" id="Resume">
+                            <h5>Henrikas</h5>
+                            <p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.</p>
+                            <ul>
+                                <li>Panevėžys</li>
+                                <li>+370621556</li>
+                                <li>henrikas25@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
                     <h2>Education</h2>
-                    <h5>Tokia anokia gimnacija</h5>
-                    <p>2015 - 2016</p><br><p>Qui deserunt veniam. 
-                        Et sed aliquam labore tempore sed quisquam iusto autem sit. 
-                        Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-                    <h5>Toks kitoks universitetas</h5>
-                    <p>2015 - 2016</p><br><p>Quia nobis sequi est occaecati aut. 
-                        Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae. 
-                        Consequatur neque etlon sader mart dila</p>
+                    <div id="timeline">
+                        <div class="timeline-item" id="Resume">
+                            <h5>Tokia anokia gimnacija</h5>
+                            <p>2015 - 2016</p>
+                            <br>
+                            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+                        </div>
+        
+                        <div class="timeline-item" id="Resume">
+                            <h5>Toks kitoks universitetas</h5>
+                            <p>2015 - 2016</p>
+                            <br>
+                            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae. Consequatur neque etlon sader mart dila</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Dešinysis stulpelis -->
-                <div class="col-md-6">
+                <div class="col-md-6" id="Resume">
                     <h2>Professional Experience</h2>
-                    <h5>Specialistas fotografijoje</h5>
-                    <p>2019 - Present</p>
-                    <p>Experion, New York, NY</p>
-                    <ul>
-                        <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                        <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project</li>
-                        <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                        <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-                    </ul>
+                    <div id="timeline">
+                        <div class="timeline-item" id="Resume">
+                            <h5>Specialistas fotografijoje</h5>
+                            <p>2019 - Present</p>
+                            <p>Experion, New York, NY</p>
+                            <ul>
+                                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project</li>
+                                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                            </ul>
+                        </div>
+        
+                        <div class="timeline-item" id="Resume">
+                            <h5>Creative Director</h5>
+                            <p>2017 - 2019</p>
+                            <p>Creative Studio, Los Angeles, CA</p>
+                            <ul>
+                                <li>Managed all aspects of creative strategy for advertising campaigns</li>
+                                <li>Collaborated with clients to refine brand messaging and design assets</li>
+                                <li>Led brainstorming sessions with a team of designers to ensure high-quality output</li>
+                                <li>Coordinated the production of digital content, print materials, and advertising designs</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Mygtukas po visa Resume turinio -->
-            <button onclick="myFunction()" class="theme-toggle-btn">Šviesi/tamsi tema</button>
         </div>
     </div>
-    <div class="container text-center" id="Portfolio">
-        <h1>Portfolio</h1>
-        <img class="portfolio-img" id="portfolio1" src="images/portfolijo1.png" alt="Portfolio image 1">
-        <img class="portfolio-img" id="portfolio2" src="images/portfolio2.jpg" alt="Portfolio image 2">
-    </div><br>
+    <div class="container container-fluid" id="Portfolio">
+        <div class="row">
+            <h1 class="mb-4">Portfolio</h1>
+            <p id="p1">Necessitabitus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    
+            <div class="menu-buttons-portfolio d-flex justify-content-center mb-4">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="app">App</button>
+                <button class="filter-btn" data-filter="product">Product</button>
+                <button class="filter-btn" data-filter="brand">Brand</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column app">
+                <div class="image-container">
+                    <img src="images/portfolio1.png" alt="Portfolio Image 1">
+                    <div class="zoom-icon">&#xF195;</div> 
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column other">
+                <div class="image-container">
+                    <img src="images/portfolio2.jpg" alt="Portfolio Image 2">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column app">
+                <div class="image-container">
+                    <img src="images/porfolio3.jpg" alt="Portfolio Image 3">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column product">
+                <div class="image-container">
+                    <img src="images/porfolio4.jpg" alt="Portfolio Image 4">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
+                <div class="image-container">
+                    <img src="images/porfolio5.jpg" alt="Portfolio Image 5">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
+                <div class="image-container">
+                    <img src="images/porfolio6.jpg" alt="Portfolio Image 6">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column other">
+                <div class="image-container">
+                    <img src="images/porfolio7.jpg" alt="Portfolio Image 7">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column app">
+                <div class="image-container">
+                    <img src="images/porfolio8.jpg" alt="Portfolio Image 8">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column product">
+                <div class="image-container">
+                    <img src="images/porfolio9.jpg" alt="Portfolio Image 9">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
+                <div class="image-container">
+                    <img src="images/porfolio10.jpg" alt="Portfolio Image 10">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column other">
+                <div class="image-container">
+                    <img src="images/porfolio11.png" alt="Portfolio Image 11">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
+                <div class="image-container">
+                    <img src="images/porfolio12.jpg" alt="Portfolio Image 12">
+                    <div class="zoom-icon">&#xF195;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="container text-center services" id="Services">
         <h1>Services</h1>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/RVmG_d3HKBA?si=K6WpZghV8P5CGQEZ" 
@@ -139,6 +256,24 @@
         </audio>
 
     </div>
-    <script src="script.js"></script>    
+    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="footer-container">
+            <h1 id="poraste">Naitas Lukšys</h1>
+            <p id="afterName"><i>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</i></p>
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" class="fa fa-facebook"></a></a>
+                <a href="https://instagram.com" target="_blank" class="fa fa-instagram"></a>
+            </div>
+            <div class="horizontal-line"></div>
+            <div class="footer-contact">
+                <p>Phone: +3706589218</p>
+                <p>Email: henrikas25@gmail.com</p>
+            </div>
+            <div class="footer-credits">
+                <p>&copy; 2024 by Naitas Lukšys. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

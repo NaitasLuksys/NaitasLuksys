@@ -2,27 +2,35 @@ document.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('div[id], section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     let currentSection = '';
+    const windowHeight = window.innerHeight;
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 60;
-        if (scrollY >= sectionTop) {
-            currentSection = section.getAttribute('id');
+        const rect = section.getBoundingClientRect();
+        const sectionHeight = rect.height;
+        if (rect.top <= windowHeight / 2 && rect.top + sectionHeight >= windowHeight / 2) {
+            currentSection = section.id;
         }
     });
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
+        const linkSection = link.getAttribute('href').substring(1);
+        
+        if (linkSection === currentSection) {
             link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
 });
-window.addEventListener('scroll', function () {
+document.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollPosition > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 });
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -31,13 +39,102 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    document.querySelectorAll('.dropdown-menu li a').forEach(item => {
+    document.querySelectorAll('.dropdown-menu li a, .theme-toggle-btn').forEach(item => {
         item.addEventListener('click', () => {
             dropdownMenu.style.display = 'none';
         });
     });
 });
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
+function toggleTheme() {
+    const body = document.body;
+    const button = document.querySelector('.theme-toggle-btn');
+
+    body.classList.toggle('dark-mode');
+    button.classList.toggle('dark');
+}
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+    const menuIcon = document.querySelector('.menu-icon');
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    function handleMenuToggleVisibility() {
+        if (mediaQuery.matches) {
+            themeToggleBtn.style.display = 'none';
+        } else {
+            themeToggleBtn.style.display = 'flex';
+        }
+    }
+
+    handleMenuToggleVisibility();
+    mediaQuery.addEventListener('change', handleMenuToggleVisibility);
+});
+// JavaScript for filtering images in the portfolio
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const images = document.querySelectorAll('#Portfolio .col-lg-4');
+    const zoomIcons = document.querySelectorAll('.zoom-icon');
+
+    // Filtravimo logika
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            images.forEach(image => {
+                image.classList.remove('active');
+                image.classList.add('hidden');
+                if (filter === 'all' || image.classList.contains(filter)) {
+                    image.classList.remove('hidden');
+                    setTimeout(() => image.classList.add('active'), 50);
+                }
+            });
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+    // Priartinimo logika
+    zoomIcons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            const image = icon.closest('.col-lg-4').querySelector('img');
+            image.classList.add('zoomed-in');
+            image.classList.add('zoom-in-effect');
+            document.body.style.overflow = 'hidden';
+            const zoomOverlay = document.createElement('div');
+            zoomOverlay.classList.add('zoom-overlay');
+            zoomOverlay.addEventListener('click', () => {
+                image.classList.remove('zoomed-in');
+                image.classList.remove('zoom-in-effect');
+                document.body.style.overflow = 'auto';
+                zoomOverlay.remove();
+            });
+            zoomOverlay.appendChild(image.cloneNode(true));
+            document.body.appendChild(zoomOverlay);
+        });
+    });
+    // Nuotraukų animacija, kai jos atsiranda ekrane (IntersectionObserver)
+    const portfolioSection = document.querySelector('#Portfolio');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('hidden');
+                setTimeout(() => entry.target.classList.add('active'), 50);
+            }
+        });
+    }, { threshold: 0.1 });
+    images.forEach(image => {
+        observer.observe(image);
+    });
+});
+// Get the button:
+let mybutton = document.getElementById("up");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
