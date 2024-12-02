@@ -128,14 +128,14 @@
 #About img{
     width: 300px;
     height: 400px;
-    margin-left: auto;
+    margin-left: -50px;
     object-fit: cover;
 }
 #About h1, #Portfolio h1, #Resume h1, #Services h1{
     text-align: center;
     text-shadow: 0px -10px 7px rgba(139,119,119,0.45);
     font-size: 50px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 #Portfolio #p1{
     margin-bottom: 50px;
@@ -160,13 +160,19 @@ h5{
     color: #4c5155;
 }
 #Resume ul li{
+    font-family: 'Georgia', serif;
     color: #4c5155;
+    margin-left: -15px;
+    line-height: 2;
 }
 p {
     font-family: 'Georgia', serif;
     font-size: 16px;
     line-height: 1.6;
     color: #4c5155; 
+}
+#p2{
+    margin-left: -15px;
 }
 body ,html{
     overflow-x: hidden;
@@ -182,6 +188,11 @@ iframe, video {
 ul.custom-list {
     list-style-type: none;
     padding: 0;
+    font-family: 'Georgia', serif;
+    color: #4c5155;
+    margin-bottom: 15px;
+    line-height: 2.5;
+    margin-left: -15px;
 }
 ul.custom-list li::before {
     content: "\276F"; 
@@ -270,6 +281,7 @@ ul.custom-list li::before {
     text-decoration: none;
     color: black;
     display: block;
+    font-family: 'Georgia', serif;
 }
 .dropdown-menu li a:hover {
     color: orange;
@@ -400,6 +412,7 @@ body.dark-mode .dropdown-menu li a:hover {
 #Resume .row {
     display: flex;
     flex-wrap: wrap;
+    gap: 6%;
 }
 #Resume .col-md-6 {
     flex: 1;
@@ -578,6 +591,7 @@ body.dark-mode .dropdown-menu li a:hover {
     text-align: center;
     padding: 10px 10px;
     font-family: 'Georgia', serif;
+    position: relative;
 }
 
 .footer-container{
@@ -585,6 +599,7 @@ body.dark-mode .dropdown-menu li a:hover {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 #poraste, #afterName{
     color: white;
@@ -592,6 +607,14 @@ body.dark-mode .dropdown-menu li a:hover {
 #poraste{
     font-size: 30px;
     margin-bottom: 0;
+}
+#txt {
+    position: absolute; /* Laikrodis bus pozicionuojamas absoliučiai */
+    right: 10px; /* 10px nuo dešiniojo krašto */
+    top: 10px; /* 10px nuo viršaus */
+    font-size: 16px;
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 .footer-socials {
     display: flex;
@@ -627,6 +650,7 @@ body.dark-mode .dropdown-menu li a:hover {
 .footer-credits p {
     font-size: 12px;
     opacity: 0.8;
+    margin-top: 25px;
 }
 .horizontal-line {
     border-top: 2px solid rgb(63, 62, 62);
@@ -655,3 +679,29 @@ body.dark-mode .dropdown-menu li a:hover {
   #up:hover {
     background-color: rgb(255, 196, 85); /* Add a dark-grey background on hover */
   }
+  .formula-container {
+    margin-top: 20px;
+    text-align: left; 
+    background-color: #e1e1e1; 
+    padding: 10px; 
+    border: 2px solid #868686;
+    border-radius: 5px; 
+    font-size: 1.2em; 
+    display: inline-block;
+}
+.formula-container math {
+    display: block;
+    margin: 0;
+    text-align: left;
+}
+.custom-row {
+    display: flex;
+    align-items: center;
+}
+.custom-row .col-sm-3 {
+    flex: 0 0 auto;
+    margin-right: -50px;
+}
+.custom-row .col-sm-9 {
+    flex: 1;
+}

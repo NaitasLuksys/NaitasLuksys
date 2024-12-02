@@ -138,3 +138,22 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+        // Funkcija laikrodžio atnaujinimui
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+}
+
+// Funkcija, kuri prideda nulį prie valandų, minučių ar sekundžių, jei jos yra mažesnės nei 10
+function checkTime(i) {
+    if (i < 10) { i = "0" + i; } // pridėti nulį prieš skaičius < 10
+    return i;
+}
+
+// Naudojame setInterval, kad atnaujintume laiką kas sekundę
+setInterval(startTime, 1000);
