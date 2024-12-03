@@ -131,7 +131,7 @@
     margin-left: -50px;
     object-fit: cover;
 }
-#About h1, #Portfolio h1, #Resume h1, #Services h1{
+#About h1, #Portfolio h1, #Resume h1, #Contacts h1{
     text-align: center;
     text-shadow: 0px -10px 7px rgba(139,119,119,0.45);
     font-size: 50px;
@@ -140,7 +140,7 @@
 #Portfolio #p1{
     margin-bottom: 50px;
 }
-#p1{
+.p1{
     text-align: center;
 }
 h1, h2, h4, h6 {
@@ -418,11 +418,11 @@ body.dark-mode .dropdown-menu li a:hover {
     flex: 1;
     padding-left: 0;
 }
-#timeline {
+.timeline {
     position: relative;
     padding-left: 20px;
 }
-#timeline::before {
+.timeline::before {
     content: "";
     position: absolute;
     top: 6px;
@@ -484,12 +484,12 @@ body.dark-mode .dropdown-menu li a:hover {
 .zoom-icon {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     font-size: 24px;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px;
     display: none;
     cursor: pointer;
 }

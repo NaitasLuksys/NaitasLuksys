@@ -15,7 +15,7 @@
     <link rel="icon" href="images/logo.jpg" type="image/logo.jpg">
 </head>
 <body>
-    <button onclick="topFunction()" id="up" title="Go to top">&#8593</button>
+    <button onclick="topFunction()" id="up" title="Go to top">&#8593;</button>
     <nav class="navbar">
         <div class="navbar-left">
             <p id="vardas">Naitas</p>
@@ -26,7 +26,7 @@
                 <li><a href="#About" class="nav-link">About</a></li>
                 <li><a href="#Resume" class="nav-link">Resume</a></li>
                 <li><a href="#Portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#Services" class="nav-link">Services</a></li>
+                <li><a href="#Contacts" class="nav-link">Contacts</a></li>
             </ul>
         </div>
         <div class="navbar-right">
@@ -40,7 +40,7 @@
                 <li><a href="#About" class="dropdown-link">About</a></li>
                 <li><a href="#Resume" class="dropdown-link">Resume</a></li>
                 <li><a href="#Portfolio" class="dropdown-link">Portfolio</a></li>
-                <li><a href="#Services" class="dropdown-link">Services</a></li>
+                <li><a href="#Contacts" class="dropdown-link">Contacts</a></li>
                 <li><button onclick="toggleTheme()" class="theme-toggle-btn">
                     <span class="sun">☀</span>
                     <span class="moon">🌙</span>
@@ -55,7 +55,7 @@
     <div class="container container-fluid" id="About">
         <div class="row custom-row">
             <h1>About me</h1>
-            <p id="p1">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <div class="p1"><p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p></div>
             <div class="col-sm-3">
                 <img src="images/Aboutme.png" class="img-fluid" alt="About Me">
             </div>
@@ -97,7 +97,6 @@
                         </mrow>
                     </math>
                 </div>
-                
                 <div class="container mt-4">
                     <div class="row">
                       <!-- Pirmasis stulpelis -->
@@ -126,14 +125,14 @@
     </div>
     <div class="container-fluid" id="Resume">
         <h1>My Resume</h1>
-        <p id="p1">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <div class="p1"><p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p></div>
         <div class="container mt-5">
             <div class="row">
                 <!-- Kairysis stulpelis -->
-                <div class="col-md-6" id="Resume">
+                <div class="col-md-6">
                     <h2>Summary</h2>
-                    <div id="timeline">
-                        <div class="timeline-item" id="Resume">
+                    <div class="timeline">
+                        <div class="timeline-item">
                             <h5>Henrikas</h5>
                             <p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.</p>
                             <ul>
@@ -144,14 +143,13 @@
                         </div>
                     </div>
                     <h2>Education</h2>
-                    <div id="timeline">
-                        <div class="timeline-item" id="Resume">
-                            <h5>Tokia anokia gimnacija</h5>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>Tokia anokia gimnazija</h5>
                             <p>2015 - 2016</p>
                             <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
                         </div>
-        
-                        <div class="timeline-item" id="Resume">
+                        <div class="timeline-item">
                             <h5>Toks kitoks universitetas</h5>
                             <p>2015 - 2016</p>
                             <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae. Consequatur neque etlon sader mart dila</p>
@@ -159,10 +157,10 @@
                     </div>
                 </div>
                 <!-- Dešinysis stulpelis -->
-                <div class="col-md-6" id="Resume">
+                <div class="col-md-6">
                     <h2>Professional Experience</h2>
-                    <div id="timeline">
-                        <div class="timeline-item" id="Resume">
+                    <div class="timeline">
+                        <div class="timeline-item">
                             <h5>Specialistas fotografijoje</h5>
                             <p>2019 - Present</p>
                             <p>Experion, New York, NY</p>
@@ -173,8 +171,7 @@
                                 <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
                             </ul>
                         </div>
-        
-                        <div class="timeline-item" id="Resume">
+                        <div class="timeline-item">
                             <h5>Creative Director</h5>
                             <p>2017 - 2019</p>
                             <p>Creative Studio, Los Angeles, CA</p>
@@ -192,8 +189,7 @@
     <div class="container container-fluid" id="Portfolio">
         <div class="row">
             <h1 class="mb-4">Portfolio</h1>
-            <p id="p1">Necessitabitus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-    
+            <div class="p1"><p id="p1">Necessitabitus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p></div>
             <div class="menu-buttons-portfolio d-flex justify-content-center mb-4">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="app">App</button>
@@ -204,89 +200,80 @@
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column app">
                 <div class="image-container">
                     <img src="images/portfolio1.png" alt="Portfolio Image 1">
-                    <div class="zoom-icon">&#xF195;</div> 
+                    <div class="zoom-icon">⌕</div> 
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column other">
                 <div class="image-container">
                     <img src="images/portfolio2.jpg" alt="Portfolio Image 2">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column app">
                 <div class="image-container">
                     <img src="images/porfolio3.jpg" alt="Portfolio Image 3">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column product">
                 <div class="image-container">
                     <img src="images/porfolio4.jpg" alt="Portfolio Image 4">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
                 <div class="image-container">
                     <img src="images/porfolio5.jpg" alt="Portfolio Image 5">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
                 <div class="image-container">
                     <img src="images/porfolio6.jpg" alt="Portfolio Image 6">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column other">
                 <div class="image-container">
                     <img src="images/porfolio7.jpg" alt="Portfolio Image 7">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column app">
                 <div class="image-container">
                     <img src="images/porfolio8.jpg" alt="Portfolio Image 8">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column product">
                 <div class="image-container">
                     <img src="images/porfolio9.jpg" alt="Portfolio Image 9">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
                 <div class="image-container">
                     <img src="images/porfolio10.jpg" alt="Portfolio Image 10">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column other">
                 <div class="image-container">
                     <img src="images/porfolio11.png" alt="Portfolio Image 11">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column brand">
                 <div class="image-container">
                     <img src="images/porfolio12.jpg" alt="Portfolio Image 12">
-                    <div class="zoom-icon">&#xF195;</div>
+                    <div class="zoom-icon">⌕</div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container text-center services" id="Services">
-        <h1>Services</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/RVmG_d3HKBA?si=K6WpZghV8P5CGQEZ" 
-        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <video width="420" height="250" controls>
-            <source src="images/MIKA - Relax, Take It Easy - MIKAVEVO (480p, h264, youtube).mp4" type="video/mp4">
-        </video>
-        <audio controls>
-            <source src="images/MIKA - Relax, Take It Easy.mp3" type="audio/mpeg">
-        </audio>
-
+    <div class="container text-center services" id="Contacts">
+        <h1>Contacts</h1>
+        
     </div>
     <footer class="footer">
         <div class="footer-container">
