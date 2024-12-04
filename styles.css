@@ -677,15 +677,15 @@ body.dark-mode .dropdown-menu li a:hover {
   }
   
   #up:hover {
-    background-color: rgb(255, 196, 85); /* Add a dark-grey background on hover */
+    background-color: rgb(255, 196, 85);
   }
   .formula-container {
     margin-top: 20px;
     text-align: left; 
-    background-color: #e1e1e1; 
+    background-color: rgba(47, 61, 89, 0.5); 
+    box-shadow: 0 2px 5px rgba(26, 33, 64, 0.2); 
     padding: 10px; 
-    border: 2px solid #868686;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-size: 1.2em; 
     display: inline-block;
 }
