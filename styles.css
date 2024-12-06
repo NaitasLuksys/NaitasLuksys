@@ -357,6 +357,10 @@ body.dark-mode .nav-link.active {
 body.dark-mode .dropdown-menu li a:hover {
     color: orange !important;
 }
+body.dark-mode .formula-container{
+    background-color: rgb(19, 19, 19);
+    color: white;
+}
 .theme-toggle-btn {
     display: flex;
     align-items: center;
@@ -694,6 +698,21 @@ body.dark-mode .dropdown-menu li a:hover {
     display: block;
     margin: 0;
     text-align: left;
+}
+.formula-layout {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Tarpas tarp SVG ir formulės */
+}
+
+.formula-layout svg {
+    flex-shrink: 0;
+    width: 50px; /* SVG plotis */
+    height: auto; /* Automatinis aukštis */
+}
+
+.formula-layout math {
+    flex-grow: 1;
 }
 .custom-row {
     display: flex;
