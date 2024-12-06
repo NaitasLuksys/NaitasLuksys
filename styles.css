@@ -682,7 +682,7 @@ body.dark-mode .dropdown-menu li a:hover {
   .formula-container {
     margin-top: 20px;
     text-align: left; 
-    background-color: none; 
+    background-color: #f9f9f9; 
     box-shadow: 0 2px 5px rgba(26, 33, 64, 0.2);
     border-color:#070708;
     padding: 10px; 
