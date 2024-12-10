@@ -771,6 +771,7 @@ body.dark-mode .formula-container{
     align-items: center;
     margin-bottom: 20px;
     font-family: 'Georgia', serif;
+    position: relative;
 }
 #Contact .form-group label {
     text-align: left;
@@ -796,17 +797,16 @@ body.dark-mode .formula-container{
     display: inline-block;
     width: 30px;
     text-align: center;
-    position: relative;
-    left: -40px;
+    position: absolute-right;
     border: 1px solid black; 
     border-radius: 5px;
     padding: 2px; 
     background-color: #fff;
-    color: #000; 
-    margin-left: 50px;
+    color: #000;
 }
 .range-slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 50%;
     margin-left: 10px;
     height: 8px;
