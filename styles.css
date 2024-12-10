@@ -730,10 +730,12 @@ body.dark-mode .formula-container{
     background-color: transparent;
     margin-bottom: 28px;
     margin-top: 25px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 #Contact .row {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .border-right {
     position: relative; 
@@ -805,7 +807,6 @@ body.dark-mode .formula-container{
 }
 .range-slider {
     -webkit-appearance: none;
-    appearance: none;
     width: 50%;
     margin-left: 10px;
     height: 8px;
@@ -818,7 +819,6 @@ body.dark-mode .formula-container{
 
 .range-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
     width: 20px;
     height: 20px;
     background: orange;
