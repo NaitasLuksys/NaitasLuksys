@@ -6,7 +6,7 @@ document.addEventListener('scroll', function () {
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         const sectionHeight = rect.height;
-        if (rect.top <= windowHeight / 2 && rect.top + sectionHeight >= windowHeight / 2) {
+        if (rect.top <= windowHeight / 5 && rect.top + sectionHeight >= windowHeight / 5) {
             currentSection = section.id;
         }
     });
@@ -29,8 +29,6 @@ document.addEventListener('scroll', function () {
         navbar.classList.remove('scrolled');
     }
 });
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -157,3 +155,28 @@ function checkTime(i) {
 
 // Naudojame setInterval, kad atnaujintume laiką kas sekundę
 setInterval(startTime, 1000);
+
+// Range slider
+function updateSlider(slider) {
+    const value = slider.value;
+    const max = slider.max;
+    const min = slider.min;
+    const percent = ((value - min) / (max - min)) * 100;
+
+    slider.style.background = `linear-gradient(to right, orange ${percent}%, #d3d3d3 ${percent}%)`;
+
+    const rangeValueId = slider.getAttribute("id").replace("question", "range-value-");
+    const rangeValue = document.getElementById(rangeValueId);
+
+    if (rangeValue) {
+        rangeValue.textContent = value;
+    }
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const sliders = document.querySelectorAll(".range-slider");
+    sliders.forEach(slider => {
+        updateSlider(slider);
+        slider.addEventListener("input", () => updateSlider(slider));
+    });
+});
+
