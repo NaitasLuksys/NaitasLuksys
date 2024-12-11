@@ -6,7 +6,7 @@ document.addEventListener('scroll', function () {
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         const sectionHeight = rect.height;
-        if (rect.top <= windowHeight / 5 && rect.top + sectionHeight >= windowHeight / 5) {
+        if (rect.top <= windowHeight / 6 && rect.top + sectionHeight >= windowHeight / 6) {
             currentSection = section.id;
         }
     });
@@ -29,6 +29,7 @@ document.addEventListener('scroll', function () {
         navbar.classList.remove('scrolled');
     }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -136,7 +137,7 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-        // Funkcija laikrodžio atnaujinimui
+// Funkcija laikrodžio atnaujinimui
 function startTime() {
     const today = new Date();
     let h = today.getHours();
@@ -147,12 +148,10 @@ function startTime() {
     document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
 }
 
-// Funkcija, kuri prideda nulį prie valandų, minučių ar sekundžių, jei jos yra mažesnės nei 10
 function checkTime(i) {
-    if (i < 10) { i = "0" + i; } // pridėti nulį prieš skaičius < 10
+    if (i < 10) { i = "0" + i; }
     return i;
 }
-
 // Naudojame setInterval, kad atnaujintume laiką kas sekundę
 setInterval(startTime, 1000);
 
@@ -161,6 +160,7 @@ function updateSlider(slider) {
     const value = slider.value;
     const max = slider.max;
     const min = slider.min;
+
     const percent = ((value - min) / (max - min)) * 100;
 
     slider.style.background = `linear-gradient(to right, orange ${percent}%, #d3d3d3 ${percent}%)`;
@@ -179,4 +179,103 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.addEventListener("input", () => updateSlider(slider));
     });
 });
+document.getElementById("submit").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const nameField = document.getElementById("name");
+    const surnameField = document.getElementById("surname");
+
+    // Surenkame duomenis iš formos laukų
+    const name = document.getElementById("name").value.trim();
+    const surname = document.getElementById("surname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+
+    clearErrors();
+    // Tikriname, ar visi laukai užpildyti
+    let allFieldsFilled = true;
+    if (!name) {
+        showError(nameField, "Šis laukas privalomas.");
+        allFieldsFilled = false;
+    }
+    if (!surname) {
+        showError(surnameField, "Šis laukas privalomas.");
+        allFieldsFilled = false;
+    }
+    if (!allFieldsFilled) return;
+    const questions = [];
+    for (let i = 1; i <= 6; i++) {
+        const value = parseInt(document.getElementById(`question${i}`).value, 10);
+        questions.push(value);
+    }
+    // Validacija
+    if (!validateEmail(email)) {
+        alert("Netinkamas el. pašto adresas.");
+        return;
+    }
+    if (!validatePhone(phone)) {
+        alert("Netinkamas telefono numeris.");
+        return;
+    }
+    if (address.length < 5) {
+        alert("Adresas turi būti ne trumpesnis nei 5 simbolių.");
+        return;
+    }
+    // Sukuriame objektą
+    const formData = {
+        name,
+        surname,
+        email,
+        phone,
+        address,
+        questions,
+    };
+    // Išvedame objektą į konsolę
+    console.log("Sukurtas objektas:", formData);
+
+    // Apskaičiuojame klausimų vidurkį
+    const averageScore = questions.reduce((sum, val) => sum + val, 0) / questions.length;
+
+    // Parodome rezultatų div
+    const resultContainer = document.getElementById("result");
+    resultContainer.style.display = "block";
+
+    resultContainer.innerHTML = `
+        <p><strong>Vardas:</strong> ${formData.name}</p>
+        <p><strong>Pavardė:</strong> ${formData.surname}</p>
+        <p><strong>El. paštas:</strong> ${formData.email}</p>
+        <p><strong>Telefonas:</strong> ${formData.phone}</p>
+        <p><strong>Adresas:</strong> ${formData.address}</p>
+        <p><strong>Klausimai:</strong> ${formData.questions.join(", ")}</p>
+        <p style="color: ${getColor(averageScore)};"><strong>${formData.name} ${formData.surname} (${formData.email}):</strong> ${averageScore.toFixed(2)}</p>
+    `;
+});
+// Pagalbinės funkcijos
+function showError(input, message) {
+    const error = document.createElement("span");
+    error.className = "error-message";
+    error.style.color = "orange";
+    error.style.fontSize = "0.9em";
+    error.style.fontFamily = "Georgia"
+    error.textContent = message;
+    input.parentElement.appendChild(error);
+}
+function clearErrors() {
+    const errors = document.querySelectorAll(".error-message");
+    errors.forEach(error => error.remove());
+}
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+function validatePhone(phone) {
+    const phoneRegex = /^\+?\d{7,15}$/;
+    return phoneRegex.test(phone);
+}
+function getColor(score) {
+    if (score < 4) return "red";
+    if (score < 7) return "orange";
+    return "green";
+}
 

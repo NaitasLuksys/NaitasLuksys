@@ -1,9 +1,12 @@
 @media (max-width: 768px) {
     #About img {
-        width: 100%;        /* Nuotrauka užima visą tėvo elemento plotį */
-        height: auto;       /* Automatinis aukščio pritaikymas pagal plotį */
-        max-height: 250px;  /* Maksimalus aukštis nustatytas į 300px */
-        object-fit: cover;  /* Užtikrina, kad nuotrauka vizualiai atrodys proporcingai */
+        width: 100%;        
+        height: auto;       
+        max-height: 250px;  
+        object-fit: cover;
+    }
+    .range-value{
+        margin-top: 7px;
     }
     .navbar {
         flex-direction: column;
@@ -337,8 +340,19 @@ ul.custom-list li::before {
     font-weight: bold; }
  /* Bendras tamsaus režimo stilius */
 body.dark-mode {
-    background-color: black;
+    background-color: rgb(9, 9, 9);
     color: #fff; 
+}
+body.dark-mode #Contact .php-email-form{
+    background-color: rgb(14, 14, 14);
+    color: white;
+}
+body.dark-mode #Contact .form-control{
+    background-color: rgb(14, 14, 14);
+}
+body.dark-mode #Contact .range-value{
+    background-color: rgb(15, 15, 15);
+    color: white;
 }
 body.dark-mode .dropdown-menu {
     display: none;
@@ -364,7 +378,7 @@ body.dark-mode .dropdown-menu li a:hover {
     color: orange !important;
 }
 body.dark-mode .formula-container{
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(14, 14, 14);
     color: white;
 }
 .theme-toggle-btn {
@@ -449,7 +463,6 @@ body.dark-mode .formula-container{
 .timeline-item h5, .timeline-item p, .timeline-item ul {
     margin-left: 0; /* Išlygiavimas su linija */
 }
-
 /* Circle indicator */
 .timeline-item::before {
     content: "";
@@ -479,7 +492,6 @@ body.dark-mode .formula-container{
     transform: scale(0);
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
-
 #Portfolio img {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
@@ -679,8 +691,7 @@ body.dark-mode .formula-container{
     font-weight: 10;
     transition: background-color 0.3s ease-in-out;
   }
-  
-  #up:hover {
+#up:hover {
     background-color: rgb(255, 196, 85);
   }
   .formula-container {
@@ -763,7 +774,7 @@ body.dark-mode .formula-container{
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-top: 20px;
 }
 #Contact .form-group {
@@ -797,7 +808,8 @@ body.dark-mode .formula-container{
     display: inline-block;
     width: 30px;
     text-align: center;
-    position: absolute-right;
+    position: relative;
+    margin-left: 20px;
     border: 1px solid black; 
     border-radius: 5px;
     padding: 2px; 
@@ -812,25 +824,26 @@ body.dark-mode .formula-container{
     height: 8px;
     background: linear-gradient(to right, orange 50%, #d3d3d3 50%);
     border-radius: 5px;
+    border: 1px solid rgba(70, 70, 70, 0.726);
     outline: none;
     padding: 0;
     transition: background-color 0.3s ease-in-out;
 }
-
 .range-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    background: orange;
+    background: rgb(250, 171, 25);
     border-radius: 50%;
+    border: 1px solid rgba(70, 70, 70, 0.726);
     cursor: pointer;
     margin-top: -2px;
 }
-
 .range-slider::-moz-range-thumb {
     width: 20px;
     height: 20px;
-    background: orange;
+    background: rgb(250, 171, 25);
+    border: 1px solid rgba(70, 70, 70, 0.726);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -845,7 +858,27 @@ body.dark-mode .formula-container{
     transition: background-color 0.3s ease-in-out;
     margin-top: 30px;
 }
-
 #submit:hover {
     background-color: rgb(255, 196, 85);
+}
+#Contact{
+    position: relative;
+}
+#result {
+    display: none;
+    margin: 20px auto; 
+    text-align: center; 
+    padding: 15px;
+    width: fit-content; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.error-message {
+    position: absolute-right;
+    font-family: 'Georgia',  serif;
+    display: block;
+    color: orange;
+    font-size: 0.9em;
 }
