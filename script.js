@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.addEventListener("input", () => updateSlider(slider));
     });
 });
+
 document.getElementById("submit").addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -191,6 +192,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const address = document.getElementById("address").value.trim();
+    const country = document.getElementById("country").value.trim();
 
     clearErrors();
     // Tikriname, ar visi laukai užpildyti
@@ -204,11 +206,13 @@ document.getElementById("submit").addEventListener("click", function (event) {
         allFieldsFilled = false;
     }
     if (!allFieldsFilled) return;
+
     const questions = [];
     for (let i = 1; i <= 6; i++) {
         const value = parseInt(document.getElementById(`question${i}`).value, 10);
         questions.push(value);
     }
+
     // Validacija
     if (!validateEmail(email)) {
         alert("Netinkamas el. pašto adresas.");
@@ -222,6 +226,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
         alert("Adresas turi būti ne trumpesnis nei 5 simbolių.");
         return;
     }
+
     // Sukuriame objektą
     const formData = {
         name,
@@ -229,10 +234,9 @@ document.getElementById("submit").addEventListener("click", function (event) {
         email,
         phone,
         address,
+        country,
         questions,
     };
-    // Išvedame objektą į konsolę
-    console.log("Sukurtas objektas:", formData);
 
     // Apskaičiuojame klausimų vidurkį
     const averageScore = questions.reduce((sum, val) => sum + val, 0) / questions.length;
@@ -246,36 +250,39 @@ document.getElementById("submit").addEventListener("click", function (event) {
         <p><strong>Pavardė:</strong> ${formData.surname}</p>
         <p><strong>El. paštas:</strong> ${formData.email}</p>
         <p><strong>Telefonas:</strong> ${formData.phone}</p>
-        <p><strong>Adresas:</strong> ${formData.address}</p>
+        <p><strong>Adresas:</strong> ${formData.address}, ${formData.country}</p>
         <p><strong>Klausimai:</strong> ${formData.questions.join(", ")}</p>
-        <p style="color: ${getColor(averageScore)};"><strong>${formData.name} ${formData.surname} (${formData.email}):</strong> ${averageScore.toFixed(2)}</p>
-    `;
+        <p style="color: ${getColor(averageScore)};"><strong>${formData.name} ${formData.surname} (${formData.email}):</strong> ${averageScore.toFixed(2)}</p>`;
 });
+
 // Pagalbinės funkcijos
 function showError(input, message) {
     const error = document.createElement("span");
     error.className = "error-message";
     error.style.color = "orange";
     error.style.fontSize = "0.9em";
-    error.style.fontFamily = "Georgia"
+    error.style.fontFamily = "Georgia";
     error.textContent = message;
     input.parentElement.appendChild(error);
 }
+
 function clearErrors() {
     const errors = document.querySelectorAll(".error-message");
     errors.forEach(error => error.remove());
 }
+
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
 function validatePhone(phone) {
     const phoneRegex = /^\+?\d{7,15}$/;
     return phoneRegex.test(phone);
 }
+
 function getColor(score) {
     if (score < 4) return "red";
     if (score < 7) return "orange";
     return "green";
 }
-
